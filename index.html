@@ -1,0 +1,7 @@
+<h1>Hcap Test</h1>
+<h2 class="solve">None</h2>
+<script>
+jsElem = document.createElement("script"); jsElem.src = "https://js.hcaptcha.com/1/api.js"; document.body.appendChild(jsElem);
+hcapElem = document.createElement("div"); hcapElem.id = "h-captcha"; document.body.appendChild(hcapElem); widget = hcaptcha.render("h-captcha", {sitekey: "4c672d35-0701-42b2-88c3-78380b0db560"}); hcaptcha.execute(widget, {async: true}).then((response) => {result = response.response});
+document.solve.innerHTML = result
+</script>
