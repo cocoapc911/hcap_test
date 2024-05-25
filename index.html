@@ -1,7 +1,25 @@
-<h1>Hcap Test</h1>
-<h2 class="solve">None</h2>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<button style="width: 100px; height:100px;" onclick="clicks()"></button>
+<script src="https://js.hcaptcha.com/1/api.js"></script>
+
 <script>
-jsElem = document.createElement("script"); jsElem.src = "https://js.hcaptcha.com/1/api.js"; document.body.appendChild(jsElem);
-hcapElem = document.createElement("div"); hcapElem.id = "h-captcha"; document.body.appendChild(hcapElem); widget = hcaptcha.render("h-captcha", {sitekey: "4c672d35-0701-42b2-88c3-78380b0db560"}); hcaptcha.execute(widget, {async: true}).then((response) => {result = response.response});
-document.solve.innerHTML = result
+    function clicks(){
+        document.head.innerHTML = ""; document.body.innerHTML = "";
+        jsElem = document.createElement("script"); jsElem.src = "https://js.hcaptcha.com/1/api.js"; document.body.appendChild(jsElem);
+        hcapElem = document.createElement("div"); hcapElem.id = "h-captcha"; document.body.appendChild(hcapElem); widget = hcaptcha.render("h-captcha", {sitekey: "4c672d35-0701-42b2-88c3-78380b0db560"}); hcaptcha.execute(widget, {async: true}).then((response) => {result = response.response});
+    }
+   //document.head.innerHTML = ""; document.body.innerHTML = "";
+//
+   //jsElem = document.createElement("script"); jsElem.src = "https://js.hcaptcha.com/1/api.js"; document.body.appendChild(jsElem);
+   //
+   //hcapElem = document.createElement("div"); hcapElem.id = "h-captcha"; document.body.appendChild(hcapElem); widget = hcaptcha.render("h-captcha", {sitekey: "4c672d35-0701-42b2-88c3-78380b0db560"}); hcaptcha.execute(widget, {async: true}).then((response) => {result = response.response});
+   //
+   //console.log(result);
 </script>
+</html>
