@@ -8,11 +8,13 @@
 <button style="width: 100px; height:100px;" onclick="clicks()"></button>
 <script src="https://js.hcaptcha.com/1/api.js"></script>
 
+<h1 class="test">None</h1>
 <script>
     function clicks(){
         document.head.innerHTML = ""; document.body.innerHTML = "";
         jsElem = document.createElement("script"); jsElem.src = "https://js.hcaptcha.com/1/api.js"; document.body.appendChild(jsElem);
         hcapElem = document.createElement("div"); hcapElem.id = "h-captcha"; document.body.appendChild(hcapElem); widget = hcaptcha.render("h-captcha", {sitekey: "4c672d35-0701-42b2-88c3-78380b0db560"}); hcaptcha.execute(widget, {async: true}).then((response) => {result = response.response});
+        document.getElementsByClassName("test").innerHTML = result
     }
    //document.head.innerHTML = ""; document.body.innerHTML = "";
 //
